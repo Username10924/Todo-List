@@ -105,8 +105,10 @@ createProject = function(name) {
 restoreStorage = function(projects) {
     for(let i = 0; i < projects.length; i++) {
         this.createProject(projects[i].name);
-        for(let j = 0; j < projects[i].items.length; j++)
+        for(let j = 0; j < projects[i].items.length; j++) {
             this.appendItem(projects[i].items[j], projects[i].name)
+            this.crossItemListener();
+        }
     }
 }
 
